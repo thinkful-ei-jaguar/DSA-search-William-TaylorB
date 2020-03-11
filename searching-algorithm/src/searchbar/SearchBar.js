@@ -12,7 +12,8 @@ export default class SearchBar extends Component {
 
     handleSumbitLinear = (e) => {
         e.preventDefault()
-        const {nope, index, tick} = indexOf(arr, this.state.value)
+        searchResult = indexOf(arr, this.state.value)
+        const {nope, index, tick} = searchResult
         if(nope) {
             this.setState({
                 notFound: true,
