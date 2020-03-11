@@ -108,6 +108,35 @@ const BinarySearchTree = require('./searchalgorithms')
      myBST.insert(22);
      console.log(inOrder(myBST))
   }
-  console.log(main());
+  //console.log(main());
 
-  
+ /*6*/ 
+ //If Picard removed, Riker takes over
+ //If Riker is removed, Data takes over
+ //If Data is removed, Worf takes over
+ //Worf -> LaForge
+ //LaForge -> Crusher
+ //Lieutenant -> Selar
+
+/*7*/
+//[128, 97, 121, 123, 98, 97, 105] -31, -7, -5, -30, -31, -23  currentMax = -5
+//start with 128, 
+//traverse the array, subtracting 128 from the rest
+//save the largest difference from that
+//recur with 97 and so on 
+//
+//return largest subtraction value
+const sharePrices = [128, 97, 121, 123, 98, 97, 105]
+function maximumProfit(arr, start, end, currentMax = 0) {
+    if(start > end) {
+        return currentMax;
+    }
+    for(i=start; i<=end; i++){
+        const profitArray = []
+        profitArray.push(currentMax)
+        profitArray.push(arr[i] - arr[start])
+        currentMax = Math.max([...profitArray])
+        return maximumProfit(arr, start+1, end, currentMax)
+    }
+}
+console.log(maximumProfit(sharePrices, 0, sharePrices.length, 0))
