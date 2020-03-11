@@ -14,7 +14,7 @@ function binarySearch(array, value, start, end, tick=0) {
     var end = end === undefined ? array.length : end;
 
     if (start > end) {
-        return {nope: true, index: null, tick: tick}
+        return {nope: -1, index: null, tick: tick}
     }
 
     const index = Math.floor((start + end) / 2);
@@ -22,7 +22,7 @@ function binarySearch(array, value, start, end, tick=0) {
 
     console.log(start, end);
     if (item == value) {
-        return {nope: false, index: index, tick: tick}
+        return {nope: null,index: index, tick: tick}
     }
     else if (item < value) {
         return binarySearch(array, value, index + 1, end, tick+1);
