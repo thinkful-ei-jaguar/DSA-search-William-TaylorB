@@ -209,3 +209,4 @@ class BinarySearchTree {
     }
 }
 
+module.exports = {Queue, BinarySearchTree}
